@@ -17,7 +17,8 @@ RUN apk add --update\
     tmux\
     && rm  -rf /tmp/* /var/cache/apk/*
 
-RUN pip install pyaxo python-potr
+# this is broken
+#RUN pip install pyaxo python-potr
 
 #make sure we get fresh keys
 RUN rm -rf /etc/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_dsa_key
@@ -53,7 +54,7 @@ ADD ssh.sh /ssh.sh
 RUN chmod +x /ssh.sh
 
 CMD ./ssh.sh && /usr/sbin/sshd -f /weechat/config/sshd_config -D
-
+#tmux new -s irc weechat
 
 #docker run --name
 
