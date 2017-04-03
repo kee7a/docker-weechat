@@ -45,7 +45,7 @@ VOLUME /data/.weechat
 EXPOSE 22
 EXPOSE 40000
 
-WORKDIR /data
+#WORKDIR /data
 
 RUN echo 'weechat:weechat' |chpasswd
 
