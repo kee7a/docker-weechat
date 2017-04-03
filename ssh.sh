@@ -5,7 +5,7 @@ if [ -z "${SSH_KEY}" ]; then
 	exit 1
 fi
 
-for MYHOME in /root /home/docker; do
+for MYHOME in /root /data; do
 	echo "=> Adding SSH key to ${MYHOME}"
 	mkdir -p ${MYHOME}/.ssh
 	chmod go-rwx ${MYHOME}/.ssh
