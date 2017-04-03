@@ -53,7 +53,8 @@ RUN echo 'weechat:weechat' |chpasswd
 ADD ssh.sh /ssh.sh
 RUN chmod +x /ssh.sh
 
-CMD ./ssh.sh && /usr/sbin/sshd -f /weechat/config/sshd_config -D
+#CMD ./ssh.sh && /usr/sbin/sshd -f /data/config/sshd_config -D
+CMD /ssh.sh && /usr/sbin/sshd
 #tmux new -s irc weechat
 
 #docker run --name
