@@ -54,7 +54,7 @@ ADD ssh.sh /ssh.sh
 RUN chmod +x /ssh.sh
 
 #CMD ./ssh.sh && /usr/sbin/sshd -f /data/config/sshd_config -D
-CMD /ssh.sh && /usr/sbin/sshd
+CMD /ssh.sh && su - weechat -c "tmux new -s irc weechat" && /usr/sbin/sshd -D
 #tmux new -s irc weechat
 
 #docker run --name
