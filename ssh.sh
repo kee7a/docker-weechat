@@ -13,4 +13,4 @@ for MYHOME in /root /data; do
 	chmod go-rw ${MYHOME}/.ssh/authorized_keys
 	echo "=> Done!"
 done
-chown -R weechat:weechat /home/docker/.ssh
+chown -R weechat:weechat /data/.ssh
