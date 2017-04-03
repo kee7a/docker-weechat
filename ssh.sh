@@ -14,5 +14,3 @@ for MYHOME in /root /data; do
 	echo "=> Done!"
 done
 chown -R weechat:weechat /data/.ssh
-
-#python -c 'import pty; pty.spawn(["/bin/sh","-c","tmux new-session -d -s irc weechat"])'
