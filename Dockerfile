@@ -15,6 +15,7 @@ RUN apk add --update\
     bash\
     openssh\
     tmux\
+    supervisor\
     && rm  -rf /tmp/* /var/cache/apk/*
 
 # this is broken
@@ -53,8 +54,10 @@ RUN echo 'weechat:weechat' |chpasswd
 ADD ssh.sh /ssh.sh
 RUN chmod +x /ssh.sh
 
+ADD supervisord.conf /etc/supervisord.conf
+
 #CMD ./ssh.sh && /usr/sbin/sshd -f /data/config/sshd_config -D
-CMD /ssh.sh && su - weechat -c "tmux new -s irc weechat" && /usr/sbin/sshd -D
+CMD /ssh.sh && supervisord
 #tmux new -s irc weechat
 
 #docker run --name
