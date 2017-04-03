@@ -48,8 +48,6 @@ EXPOSE 40000
 
 #WORKDIR /data
 
-RUN echo 'weechat:weechat' |chpasswd
-
 #RUN chown -R weechat:weechat /etc/ssh
 ADD ssh.sh /ssh.sh
 RUN chmod +x /ssh.sh
