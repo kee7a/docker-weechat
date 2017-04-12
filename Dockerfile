@@ -54,8 +54,8 @@ RUN chmod +x /ssh.sh
 
 ADD supervisord.conf /etc/supervisord.conf
 
-#CMD ./ssh.sh && /usr/sbin/sshd -f /data/config/sshd_config -D
-CMD /ssh.sh && supervisord
+CMD ./ssh.sh && /usr/sbin/sshd -D
+#CMD /ssh.sh && supervisord
 #tmux new -s irc weechat
 
 #docker run --name
