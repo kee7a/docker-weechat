@@ -14,3 +14,4 @@ for MYHOME in /root /data; do
 	echo "=> Done!"
 done
 chown -R weechat:weechat /data/.ssh
+echo weechat:$(tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1)|chpasswd
